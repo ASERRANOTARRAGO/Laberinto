@@ -24,14 +24,15 @@ namespace Laberinto.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<Cell> Get()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 5).Select(index => new Cell
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
+                X = rng.Next(-20, 55),
+                Y = rng.Next(-20, 55),
+                Hall = true,
+                Value = 87
             })
             .ToArray();
         }
