@@ -36,8 +36,9 @@ static displayName = Warehouse.name;
         );
     }
 
-    getNext = (ev) => {
+    calculateDistances = (ev) => {
         ev.preventDefault();
+        this.setState({ cells: [], loading: true });
         this.populateWarehouseData('http://localhost:63011/cell/CalculateDistances');
     }
 
@@ -48,9 +49,9 @@ static displayName = Warehouse.name;
 
     return (
       <div>
-        <h1 id="tabelLabel">Aquiles Warehouse</h1>
-            <p>Haga clic en el botón para calcular las distancias.</p>
-            <button className="btn btn-primary mb-4" onClick={this.getNext}>Calcular distancias</button>
+            <h1 id="tabelLabel" className="mt-4">Almac&eacute;n Aquiles</h1>
+            <p>Haga clic en el bot&oacute;n para calcular las distancias.</p>
+            <button className="btn btn-primary mb-4" onClick={this.calculateDistances}>Calcular distancias</button>
         {contents}
       </div>
     );

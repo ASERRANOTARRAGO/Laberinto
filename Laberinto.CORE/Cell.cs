@@ -1,6 +1,4 @@
-using System;
-
-namespace Laberinto
+namespace Laberinto.CORE
 {
     public class Cell
     {
